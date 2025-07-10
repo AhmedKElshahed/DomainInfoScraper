@@ -1,5 +1,0 @@
-pandas
-dnspython
-python-whois
-tldextract
-openpyxl

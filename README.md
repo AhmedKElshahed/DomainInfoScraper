@@ -5,6 +5,9 @@
 - Docker Compose installed
 
 ###  Prep
+```bash
+git clone https://github.com/AhmedKElshahed/DomainInfoScraper.git
+```
 
 ```bash
 cd DomainInfoScraper/app

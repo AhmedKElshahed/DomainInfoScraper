@@ -4,6 +4,13 @@
 - Docker installed
 - Docker Compose installed
 
+###  Prep
+
+```bash
+cd DomainInfoScraper/app
+rename streamlit .streamlit
+```
+
 ### Run locally:
 
 ```bash

@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: domains_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+    ports:
+      - "8501:8501"
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: test
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: domains_db
+    depends_on:
+      - db
+    volumes:
+      - ./app:/app
+      - ./db:/db
+
+volumes:
+  db_data:
